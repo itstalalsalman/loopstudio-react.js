@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 //font-family: 'Alata', sans-serif;
 //font-family: 'Josefin Sans', sans-serif;
 
@@ -60,6 +60,15 @@ const LogoAndText = styled.div`
     }
 `;
 
+const opacityInc = keyframes`
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+`;
+
 
 const TextBox = styled.div`
     width: 665px;
@@ -79,6 +88,9 @@ const TextBox = styled.div`
         justify-content: center;
         align-items: center;
         margin-left: 5%;
+        opacity: 0;
+        animation: ${opacityInc} 4s forwards;
+        
         
         @media (max-width: 775px){
             font-size: 4.2rem;
@@ -92,9 +104,18 @@ const TextBox = styled.div`
     }
 
     
-
 `
 
+const slideFromTop = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const NavBar = styled.div`
     width: 35%;
@@ -120,6 +141,29 @@ const NavBar = styled.div`
             font-family: 'Alata', sans-serif;
             font-weight: 400;
             font-size: 15px;
+            
+        }
+
+        li{
+            position: relative;
+            line-height: 50px;
+            cursor: pointer;
+            animation: ${slideFromTop} 0.8s ease-in-out forwards;
+        }
+
+        li::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        li:hover::after {
+            width: 100%;
         }
     }
 
