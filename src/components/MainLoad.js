@@ -12,7 +12,15 @@ function MainLoad(){
                     <h1>IMMERSIVE EXPERIENCES THAT DELIVER</h1>
                 </TextBox>
             </LogoAndText>
-            <NavBar></NavBar>
+            <NavBar>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </NavBar>
         </Container>
     );
 }
@@ -39,18 +47,22 @@ const LogoAndText = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 15%;
+    gap: 18%;
 
     img{
         width: 150px;
         height: 20%;
         object-fit: contain;
     }
+
+    @media (max-width: 775px){
+        width: 80%;
+    }
 `;
 
 
 const TextBox = styled.div`
-    width: 100%;
+    width: 665px;
     height: 40%;
     border: 2px solid white;
     color: white;
@@ -62,15 +74,56 @@ const TextBox = styled.div`
         font-family: 'Josefin Sans', sans-serif;
         font-weight: 300;
         font-size: 4.5rem;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5%;
         
-        @media (max-width: 1200px){
-            font-size: 3.5rem;
-        }
+        @media (max-width: 775px){
+            font-size: 4.2rem;
+        } 
+        
     }
+
+    @media (max-width: 775px) {
+        width: 100%;
+        height: 50%;
+    }
+
+    
 
 `
 
 
 const NavBar = styled.div`
     width: 35%;
+    height: 20%;
+    display: flex;
+    
+
+    ul{
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        color: white;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10%;
+        margin-right: 5%;
+        
+        a{
+            text-decoration: none;
+            color: white;
+            font-family: 'Alata', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 775px){
+        display: none;
+    }
 `
