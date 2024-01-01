@@ -4,6 +4,7 @@ import styled, {keyframes} from "styled-components";
 //font-family: 'Josefin Sans', sans-serif;
 
 function MainLoad(){
+    
     return (
         <Container>
             <LogoAndText>
