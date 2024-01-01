@@ -38,6 +38,11 @@ const Container = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
+
+    
+    @media (max-width: 775px) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/mobile/image-hero.jpg");
+    }
 `    
 
 
@@ -93,14 +98,25 @@ const TextBox = styled.div`
         
         
         @media (max-width: 775px){
-            font-size: 4.2rem;
-        } 
+            font-size: 4.0rem;
+        }
+        
+        @media (max-width: 550px) {
+            font-size: 2.65rem;
+        }
+
+        @media (max-width: 390px) {
+            font-size: 2.5rem;
+        }
         
     }
 
     @media (max-width: 775px) {
         width: 100%;
         height: 50%;
+    }
+    @media (max-width: 500px) {
+        height: 35%;    
     }
 
     
